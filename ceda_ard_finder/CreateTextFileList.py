@@ -12,7 +12,7 @@ log = logging.getLogger("luigi-interface")
 patternSets = {
     "S1": ["^([\w\d]{3})_\d{8}(_[^_]*){9}_[^_\.]*"],
     "S2": ["^([\w\d]{3})_\d{8}_lat\d+lon\d+(_[^_]*){3}_[^_\.]*",
-           "^([\w\d]{3})_\d{8}_latn\d+lonw\d+(_[^_]*){4}_[^_\.]*"]
+           "^([\w\d]{3})_\d{8}_lat[ns]\d+lon[ew]\d+(_[^_]*){4}_[^_\.]*"]
 }
 
 
