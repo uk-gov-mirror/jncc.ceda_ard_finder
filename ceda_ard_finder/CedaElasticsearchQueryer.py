@@ -15,10 +15,12 @@ class CedaElasticsearchQueryer:
         'Sentinel-1A ARD',
         'Sentinel-1B',
         'Sentinel-1B ARD',
+        'Sentinel-1C ARD',  # Not indexed in Elasticsearch - uses filesystem search
         'Sentinel-2A',
         'Sentinel-2A ARD',
         'Sentinel-2B',
         'Sentinel-2B ARD',
+        'Sentinel-2C ARD',  # Not indexed in Elasticsearch - uses filesystem search
         'Sentinel-3A',
         'Sentinel-3B',
         'Sentinel-TMPDEPOSIT',
@@ -140,32 +142,6 @@ class CedaElasticsearchQueryer:
                 }
             }
         })
-        # if ardFiles:
-        #     q = {
-        #         "bool": {
-        #             "should": []
-        #         }
-        #     }
-
-        #     for ard in ardFiles:
-        #         q["bool"]["should"].append({
-        #             "wildcard": {
-        #                 "file.data_file": {
-        #                     "value": f"{ard}*",
-        #                     "case_insensitive": "true"
-        #                 }
-        #             }
-        #         })
-        #     self.arguments.append(q)
-        # elif ardFile:
-        #     self.arguments.append({
-        #         "wildcard": {
-        #             "file.data_file": {
-        #                 "value": f"{ardFile}*",
-        #                 "case_insensitive": "true"
-        #             }
-        #         }
-        #     })
 
     def buildQuery(self, start, size):
         return {
